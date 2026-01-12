@@ -1,0 +1,15 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Ubicacio</th>
+      <th scope="col">User</th>
+      <th scope="col">Capacitat</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for(planta of plantes; track planta.id){
+        <app-plantes-table-row [planta]="planta"></app-plantes-table-row>
+    }
+  </tbody>
+</table>
