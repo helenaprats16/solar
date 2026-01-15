@@ -1,1 +1,6 @@
-<p>plantes-list works!</p>
+<div class="cards-container">
+  
+   @for(carta of cartes(); track carta.id){
+        <app-plantes-item [plantaId]="carta"></app-plantes-item>
+    }
+  </div>

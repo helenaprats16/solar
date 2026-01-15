@@ -1,1 +1,9 @@
-<p>plantes-item works!</p>
+<div class="card" style="width: 18rem;">
+<img [src]="carta().foto ? carta().foto : 'placeholder.png'" class="card-img-top" alt="placa_solar">
+  <div class="card-body">
+    <h5 class="card-title">{{carta().nom}}</h5>
+    <p class="card-text">{{carta().ubicacio.latitude}},{{carta().ubicacio.latitude}}</p>
+    <p class="card-text">{{carta().user}}</p>
+    <a [routerLink]="['/planta',carta().id]" class="btn btn-primary">Detall</a> <!-- Per enllaçar el boto de detall ara a la finestra de detall -->
+</div>
+</div>

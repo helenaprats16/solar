@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
+import { PLANTES_DEMO } from '../plantes_demo';
 
 @Component({
   selector: 'app-plantes-detall',
@@ -8,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class PlantesDetall {
 
+  id = input<string>();
+
+  //La planta se "calcula" automaticamente cunado cambia
+
+  planta= computed(() => {
+    const idNum = Number(this.id());
+    return PLANTES_DEMO .find(p => p.id === idNum)
+  })
 }

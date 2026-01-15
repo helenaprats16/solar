@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { PLANTES_DEMO } from '../plantes_demo';
 import { Planta } from '../planta';
 import { PlantesTableRow } from "../plantes-table-row/plantes-table-row";
@@ -11,5 +11,7 @@ import { PlantesTableRow } from "../plantes-table-row/plantes-table-row";
 })
 export class PlantesTable {
 
-  plantes: Planta[] = PLANTES_DEMO;
+  //plantes: Planta[] = PLANTES_DEMO;
+
+  plantes = signal<Planta[]>(PLANTES_DEMO);
 }

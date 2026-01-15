@@ -8,8 +8,8 @@
     </tr>
   </thead>
   <tbody>
-    @for(planta of plantes; track planta.id){
-        <app-plantes-table-row [planta]="planta"></app-plantes-table-row>
+    @for(planta of plantes(); track planta.id){
+        <tr app-plantes-table-row [plantaId]="planta"></tr>
     }
   </tbody>
 </table>

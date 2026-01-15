@@ -1,1 +1,22 @@
-<p>plantes-detall works!</p>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow-lg">
+        <img [src]="planta()?.foto ? planta()?.foto : 'placeholder.png'" class="card-img-top" alt="foto planta"/>
+
+        <div class="card-body">
+          <h2 class="card-title mb-3">{{ planta()?.nom }}</h2>
+          <p class="card-text"><strong>ID:</strong>{{ planta()?.id }}</p>
+          <p class="card-text"><strong>Usuari:</strong>{{ planta()?.user }}</p>
+          <p class="card-text"><strong>Created_at:</strong>{{ planta()?.created_at }}</p>
+          <p class="card-text"><strong>Ubicació:</strong>{{ planta()?.ubicacio?.latitude }},{{ planta()?.ubicacio?.longitude }}</p>
+
+          <p class="card-text"><strong>Capacitat:</strong>{{ planta()?.capacitat }}</p>
+
+          <a href="#plantes" class="btn btn-outline-primary mt-3"> ⬅ Tornar </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  

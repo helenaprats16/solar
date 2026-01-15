@@ -1,4 +1,4 @@
-import {Planta} from './planta'; //Ajusta la ruta según tu proyecto  
+import { Planta } from './planta'; //Ajusta la ruta según tu proyecto
 
 export const PLANTES_DEMO: Planta[] = [
   {
@@ -8,7 +8,7 @@ export const PLANTES_DEMO: Planta[] = [
     ubicacio: { latitude: 41.3879, longitude: 2.1699 },
     capacitat: 150,
     user: 'admin@energia.cat',
-    foto: 'https://example.com/fotos/planta1.jpg'
+    foto: 'image.jpeg',
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ export const PLANTES_DEMO: Planta[] = [
     ubicacio: { latitude: 41.9818, longitude: 2.8237 },
     capacitat: 85,
     user: 'tecnic@energia.cat',
-    foto: 'https://example.com/fotos/planta2.jpg'
+    foto: 'image2.webp',
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const PLANTES_DEMO: Planta[] = [
     ubicacio: { latitude: 41.1189, longitude: 1.2445 },
     capacitat: 200,
     user: 'gestor@energia.cat',
-    foto: 'https://example.com/fotos/planta3.jpg'
+    foto: 'image3.webp',
   },
   {
     id: 4,
@@ -35,16 +35,16 @@ export const PLANTES_DEMO: Planta[] = [
     ubicacio: { latitude: 41.6142, longitude: 0.6258 },
     capacitat: 120,
     user: 'admin@energia.cat',
-    foto: 'https://example.com/fotos/planta4.jpg'
+    foto: 'image4.jpg',
   },
   {
     id: 5,
     created_at: 1735193600000, // 27 diciembre 2024
     nom: 'Eòlica Costa Brava',
-    ubicacio: { latitude: 41.7000, longitude: 2.8500 },
+    ubicacio: { latitude: 41.7, longitude: 2.85 },
     capacitat: 95,
     user: 'tecnic@energia.cat',
-    foto: 'https://example.com/fotos/planta5.jpg'
+    foto: '',
   },
   {
     id: 6,
@@ -53,25 +53,25 @@ export const PLANTES_DEMO: Planta[] = [
     ubicacio: { latitude: 40.7167, longitude: 0.8667 },
     capacitat: 180,
     user: 'gestor@energia.cat',
-    foto: 'https://example.com/fotos/planta6.jpg'
+    foto: '',
   },
   {
     id: 7,
     created_at: 1735000800000, // 25 diciembre 2024
     nom: 'Solar Pirineu',
-    ubicacio: { latitude: 42.5000, longitude: 1.5167 },
+    ubicacio: { latitude: 42.5, longitude: 1.5167 },
     capacitat: 75,
     user: 'admin@energia.cat',
-    foto: 'https://example.com/fotos/planta7.jpg'
+    foto: '',
   },
   {
     id: 8,
     created_at: 1734904400000, // 24 diciembre 2024
     nom: 'Planta Montseny',
-    ubicacio: { latitude: 41.7667, longitude: 2.4000 },
+    ubicacio: { latitude: 41.7667, longitude: 2.4 },
     capacitat: 110,
     user: 'tecnic@energia.cat',
-    foto: 'https://example.com/fotos/planta8.jpg'
+    foto: '',
   },
   {
     id: 9,
@@ -80,7 +80,7 @@ export const PLANTES_DEMO: Planta[] = [
     ubicacio: { latitude: 41.0833, longitude: 1.1333 },
     capacitat: 160,
     user: 'gestor@energia.cat',
-    foto: 'https://example.com/fotos/planta9.jpg'
+    foto: '',
   },
   {
     id: 10,
@@ -89,24 +89,7 @@ export const PLANTES_DEMO: Planta[] = [
     ubicacio: { latitude: 40.8106, longitude: 0.5206 },
     capacitat: 130,
     user: 'admin@energia.cat',
-    foto: 'https://example.com/fotos/planta10.jpg'
+    foto: '',
   },
-  {
-    id: 11,
-    created_at: 1734615200000, // 21 diciembre 2024
-    nom: 'Solar Pla Lleida',
-    ubicacio: { latitude: 41.6167, longitude: 0.6167 },
-    capacitat: 140,
-    user: 'tecnic@energia.cat',
-    foto: 'https://example.com/fotos/planta11.jpg'
-  },
-  {
-    id: 12,
-    created_at: 1734518800000, // 20 diciembre 2024
-    nom: 'Planta Barcelona Nord',
-    ubicacio: { latitude: 41.4333, longitude: 2.1833 },
-    capacitat: 90,
-    user: 'gestor@energia.cat'
-    // Sense foto (camp opcional)
-  }
+  
 ];
