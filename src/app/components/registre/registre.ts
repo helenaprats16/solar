@@ -5,6 +5,8 @@ import { Component } from '@angular/core';
   imports: [],
   templateUrl: './registre.html',
   styleUrl: './registre.css',
+  standalone:true,
+
 })
 export class Registre {
 
