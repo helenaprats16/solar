@@ -1,0 +1,10 @@
+/* ESTO ES LO MÁS IMPORTANTE */
+@import "leaflet/dist/leaflet.css";
+
+/* Luego el resto de tus estilos si los tienes */
+/* ESTO ES IMPORTANTE */
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
