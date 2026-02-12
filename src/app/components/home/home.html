@@ -1,1 +1,19 @@
-<p >home works!</p>
+<section class="container my-5">
+	<div class="text-center mt-3">
+		<h1 class="fw-bold">Benvingut/da</h1>
+
+		@if (isLoggedIn$ | async) {
+			<p class="lead">Sessio iniciada. Ja pots entrar a les plantes.</p>
+			<div class="d-flex justify-content-center gap-3 mt-4">
+				<a class="btn btn-primary btn-lg" [routerLink]="['/plantes']">Veure plantes</a>
+				<a class="btn btn-outline-primary btn-lg" [routerLink]="['/mapa']">Mapa</a>
+			</div>
+		} @else {
+			<p class="lead">Abans de començar, inicia sessio o crea un compte.</p>
+			<div class="d-flex justify-content-center gap-3 mt-4">
+				<a class="btn btn-primary btn-lg" [routerLink]="['/login']">Iniciar sessio</a>
+				<a class="btn btn-outline-primary btn-lg" [routerLink]="['/registre']">Registrar-se</a>
+			</div>
+		}
+	</div>
+</section>

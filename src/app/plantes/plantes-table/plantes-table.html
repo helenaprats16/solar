@@ -1,15 +1,33 @@
-<table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Nom</th>
-      <th scope="col">Ubicacio</th>
-      <th scope="col">User</th>
-      <th scope="col">Capacitat</th>
-    </tr>
-  </thead>
-  <tbody>
-    @for(planta of plantes(); track planta.id){
-        <tr app-plantes-table-row [plantaId]="planta"></tr>
-    }
-  </tbody>
-</table>
+<div class="container-fluid mt-4">
+  <!-- TAULA -->
+  <table class="table table-striped table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Nom</th>
+        <th scope="col">Ubicació</th>
+        <th scope="col">Capacitat (kW)</th>
+        <th scope="col">User</th>
+      </tr>
+    </thead>
+    <tbody>
+      @if (plantesFiltered().length > 0) {
+        @for(planta of plantesFiltered(); track planta.id){
+          <tr>
+            <td><strong>{{ planta.nom }}</strong></td>
+            <td>
+              <small class="text-muted">
+                {{ planta.ubicacio.latitude }}, {{ planta.ubicacio.longitude }}
+              </small>
+            </td>
+            <td>{{ planta.capacitat }}</td>
+            <td>{{ planta.user }}</td>
+          </tr>
+        }
+      } @else {
+        <tr>
+          <td colspan="4" class="text-center text-muted">No s'ha trobada cap planta</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+</div>

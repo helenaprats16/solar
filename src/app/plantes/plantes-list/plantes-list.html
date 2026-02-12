@@ -1,6 +1,11 @@
 <div class="cards-container">
-  
-   @for(carta of cartes(); track carta.id){
-        <app-plantes-item [plantaId]="carta"></app-plantes-item>
+  @if (cartesFiltered().length > 0) {
+    @for(carta of cartesFiltered(); track carta.id){
+      <app-plantes-item [plantaId]="carta"></app-plantes-item>
     }
-  </div>
+  } @else {
+    <div class="alert alert-info w-100">
+      No s'ha trovada cap planta
+    </div>
+  }
+</div>
