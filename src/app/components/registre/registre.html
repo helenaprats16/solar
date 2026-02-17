@@ -1,26 +1,31 @@
-
-<section class="vh-100 d-flex align-items-center justify-content-center" style="background-color: #f8f9fa;">
+<section
+  class="vh-100 d-flex align-items-center justify-content-center"
+  style="background-color: #f8f9fa"
+>
   <div class="container">
     <div class="row justify-content-center">
-      
       <div class="col-md-6 col-lg-5">
-        <div class="card shadow" style="border-radius: 15px;">
+        <div class="card shadow" style="border-radius: 15px">
           <div class="card-body p-4">
-
             <h2 class="text-uppercase text-center mb-4">Registre</h2>
 
             <form [formGroup]="formulario" (ngSubmit)="registrar()">
-
               <div data-mdb-input-init class="form-outline mb-3">
                 <input
                   type="email"
                   id="email"
                   class="form-control form-control-lg"
                   formControlName="email"
-                  [class.is-invalid]="formulario.get('email')?.invalid && (formulario.get('email')?.touched || submitted)"
+                  [class.is-invalid]="
+                    formulario.get('email')?.invalid &&
+                    (formulario.get('email')?.touched || submitted)
+                  "
                 />
                 <label class="form-label" for="email">Correu electrònic</label>
-                @if (formulario.get('email')?.invalid && (formulario.get('email')?.touched || submitted)) {
+                @if (
+                  formulario.get('email')?.invalid &&
+                  (formulario.get('email')?.touched || submitted)
+                ) {
                   <div class="invalid-feedback d-block">Email no valid</div>
                 }
               </div>
@@ -31,10 +36,16 @@
                   id="password"
                   class="form-control form-control-lg"
                   formControlName="password"
-                  [class.is-invalid]="formulario.get('password')?.invalid && (formulario.get('password')?.touched || submitted)"
+                  [class.is-invalid]="
+                    formulario.get('password')?.invalid &&
+                    (formulario.get('password')?.touched || submitted)
+                  "
                 />
                 <label class="form-label" for="password">Contrasenya</label>
-                @if (formulario.get('password')?.invalid && (formulario.get('password')?.touched || submitted)) {
+                @if (
+                  formulario.get('password')?.invalid &&
+                  (formulario.get('password')?.touched || submitted)
+                ) {
                   <div class="invalid-feedback d-block">Password no valid</div>
                 }
               </div>
@@ -45,13 +56,25 @@
                   id="repeatPassword"
                   class="form-control form-control-lg"
                   formControlName="passwordrepeat"
-                  [class.is-invalid]="(formulario.get('passwordrepeat')?.invalid && (formulario.get('passwordrepeat')?.touched || submitted)) || (formulario.errors?.['passwordMismatch'] && (formulario.get('passwordrepeat')?.touched || submitted))"
+                  [class.is-invalid]="
+                    (formulario.get('passwordrepeat')?.invalid &&
+                      (formulario.get('passwordrepeat')?.touched || submitted)) ||
+                    (formulario.errors?.['passwordMismatch'] &&
+                      (formulario.get('passwordrepeat')?.touched || submitted))
+                  "
                 />
                 <label class="form-label" for="repeatPassword">Repeteix la contrasenya</label>
-                @if (formulario.errors?.['passwordMismatch'] && (formulario.get('passwordrepeat')?.touched || submitted)) {
+                @if (
+                  formulario.errors?.['passwordMismatch'] &&
+                  (formulario.get('passwordrepeat')?.touched || submitted)
+                ) {
                   <div class="invalid-feedback d-block">No coincideix el password</div>
                 }
-                @if (!formulario.errors?.['passwordMismatch'] && formulario.get('passwordrepeat')?.invalid && (formulario.get('passwordrepeat')?.touched || submitted)) {
+                @if (
+                  !formulario.errors?.['passwordMismatch'] &&
+                  formulario.get('passwordrepeat')?.invalid &&
+                  (formulario.get('passwordrepeat')?.touched || submitted)
+                ) {
                   <div class="invalid-feedback d-block">Password no valid</div>
                 }
               </div>
@@ -61,16 +84,13 @@
               </div>
 
               <p class="small fw-bold text-center mt-3 mb-0">
-                Ja tens compte? <a [routerLink]="['/login']" class="link-danger">Inicia sessió ací</a>
+                Ja tens compte?
+                <a [routerLink]="['/login']" class="link-danger">Inicia sessió ací</a>
               </p>
-
             </form>
-
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-

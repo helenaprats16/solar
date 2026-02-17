@@ -8,13 +8,14 @@ import { Registre } from './components/registre/registre';
 import { Mapa } from './components/mapa/mapa';
 import { authGuard } from './guards/auth.guard';
 
+//activar ho al entregar el projecte
 export const routes: Routes = [
     { path: 'home', component: Home},
-    { path: 'plantes', component: PlantesList, canActivate: [authGuard] },
-    { path: 'plantes_table', component: PlantesTable, canActivate: [authGuard] },
-    { path: 'planta/:id', component: PlantesDetall, canActivate: [authGuard] },
+    { path: 'plantes', component: PlantesList/*canActivate: [authGuard] */}, // NO permet entrar al enllaç sols es  podra accedir a estes rutes si l'usuari s'ha loguejat
+    { path: 'plantes_table', component: PlantesTable/*canActivate: [authGuard] */ },
+    { path: 'planta/:id', component: PlantesDetall/*canActivate: [authGuard] */ },
     { path: 'login', component: Login },
     { path: 'registre', component: Registre },
-    { path: 'mapa', component: Mapa, canActivate: [authGuard] },
+    { path: 'mapa', component: Mapa,/*canActivate: [authGuard] */ },
     { path: '**',pathMatch: 'full', redirectTo: 'home'},//si en tot el path es qualsevol cosa q no siga una de les definides que duga a home
 ];

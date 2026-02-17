@@ -12,9 +12,10 @@
           <a class="nav-link" [routerLink]="['/home']">Home</a>
         </li>
 
-        @if (isLoggedIn$ | async) {
+        <!--Descomentar abans de entregar el projecte-->
+        <!--@if (isLoggedIn$ | async) { Si s'ha loguejat -->
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/plantes']">Detalls plantes</a>
+            <a class="nav-link" [routerLink]="['/plantes']">Detalls plantes</a> <!--arraybinding el que mes es gasta , mes flexible-->
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/plantes_table']">Taula plantes</a>
@@ -22,21 +23,21 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/mapa']">Mapa</a>
           </li>
-        } @else {
+        <!-- } @else { -->
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/login']">Iniciar sessio</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/registre']">Registrar-se</a>
           </li>
-        }
+        <!-- } -->
       </ul>
 
       <div class="ms-auto d-flex gap-2 align-items-center">
-        <input 
-          class="form-control form-control-sm" 
-          type="search" 
-          placeholder="Buscar per nom..." 
+        <input
+          class="form-control form-control-sm"
+          type="search"
+          placeholder="Buscar per nom..."
           aria-label="Search"
           [(ngModel)]="searchTerm"
           (input)="onSearchChange(searchTerm)"

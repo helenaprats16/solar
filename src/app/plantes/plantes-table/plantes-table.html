@@ -7,13 +7,16 @@
         <th scope="col">Ubicació</th>
         <th scope="col">Capacitat (kW)</th>
         <th scope="col">User</th>
+        <th scope="col">Accio</th>
       </tr>
     </thead>
     <tbody>
       @if (plantesFiltered().length > 0) {
-        @for(planta of plantesFiltered(); track planta.id){
+        @for (planta of plantesFiltered(); track planta.id) {
           <tr>
-            <td><strong>{{ planta.nom }}</strong></td>
+            <td>
+              <strong>{{ planta.nom }}</strong>
+            </td>
             <td>
               <small class="text-muted">
                 {{ planta.ubicacio.latitude }}, {{ planta.ubicacio.longitude }}
@@ -21,6 +24,12 @@
             </td>
             <td>{{ planta.capacitat }}</td>
             <td>{{ planta.user }}</td>
+            <td>
+              <button type="button" class="btn btn-warning" (click)="editarPlanta(planta)">
+                Editar
+              </button>
+              <button type="button" class="btn btn-danger" (click)="eliminarPlanta(planta)">Eliminar</button>
+            </td>
           </tr>
         }
       } @else {
@@ -30,4 +39,104 @@
       }
     </tbody>
   </table>
+  <br /><br />
+  <form
+    class="row g-3 needs-validation"
+    novalidate
+    style="border: 3px solid rgb(0, 0, 0); padding: 20px; border-radius: 10px"
+  >
+    <div class="col-md-4 position-relative">
+      <label class="form-label">Nom</label>
+      <input
+        type="text"
+        class="form-control"
+        required
+        [value]="formulario().nom || ''"
+        (input)="
+          formulario.set({
+            nom: $event.target.value,
+            capacitat: formulario().capacitat,
+            user: formulario().user,
+            ubicacio: formulario().ubicacio,
+          })
+        "
+      />
+      <div class="invalid-tooltip">Proporciona un nom vàlid.</div>
+    </div>
+    <div class="col-md-4 position-relative">
+      <label class="form-label">Ubicació (lat)</label>
+      <input
+        type="text"
+        class="form-control"
+        required
+        [value]="formulario().ubicacio.latitude || ''"
+        (input)="
+          formulario.set({
+            nom: formulario().nom,
+            capacitat: formulario().capacitat,
+            user: formulario().user,
+            ubicacio: { latitude: $event.target.value, longitude: formulario().ubicacio.longitude },
+          })
+        "
+      />
+      <div class="invalid-tooltip">Proporciona una ubicació vàlida.</div>
+      <label class="form-label">Ubicació (lon)</label>
+      <input
+        type="text"
+        class="form-control"
+        required
+        [value]="formulario().ubicacio.longitude || ''"
+        (input)="
+          formulario.set({
+            nom: formulario().nom,
+            capacitat: formulario().capacitat,
+            user: formulario().user,
+            ubicacio: { latitude: formulario().ubicacio.latitude, longitude: $event.target.value },
+          })
+        "
+      />
+      <div class="invalid-tooltip">Proporciona una ubicació vàlida.</div>
+    </div>
+    <div class="col-md-4 position-relative">
+      <label class="form-label">Capacitat(kW)</label>
+      <input
+        type="text"
+        class="form-control"
+        required
+        [value]="formulario().capacitat || ''"
+        (input)="
+          formulario.set({
+            nom: formulario().nom,
+            capacitat: $event.target.value,
+            user: formulario().user,
+            ubicacio: formulario().ubicacio,
+          })
+        "
+      />
+      <div class="invalid-tooltip">Proporciona una capacitat vàlida.</div>
+    </div>
+    <div class="col-md-6 position-relative">
+      <label class="form-label">User</label>
+      <input
+        type="text"
+        class="form-control"
+        required
+        [value]="formulario().user || ''"
+        (input)="
+          formulario.set({
+            nom: formulario().nom,
+            capacitat: formulario().capacitat,
+            user: $event.target.value,
+            ubicacio: formulario().ubicacio,
+          })
+        "
+      />
+      <div class="invalid-tooltip">Proporciona un user vàlid.</div>
+    </div>
+    <div class="col-12">
+      <button class="btn" type="button" style="background-color: rgb(145, 142, 142)" (click)="guardar()">
+        Guardar
+      </button>
+    </div>
+  </form>
 </div>

@@ -1,4 +1,3 @@
-
 // Servicio para gestionar la conexión y operaciones con Supabase y la API REST
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
@@ -92,5 +91,31 @@ export class Supaservice {
       throw error;
     }
     this.sessionSubject.next(null);
+  }
+
+  // Actualitza una planta per id
+  async updatePlanta(id: number, updateData: Partial<Planta>) {
+    const { data, error } = await this.supabase
+      .from('plantes')
+      .update(updateData)
+      .eq('id', id);
+    if (error) {
+      console.error('Error actualitzant planta:', error);
+      throw error;
+    }
+    return data;
+  }
+
+  // Elimina una planta per id
+  async deletePlanta(id: number) {
+    const { data, error } = await this.supabase
+      .from('plantes')
+      .delete()
+      .eq('id', id);
+    if (error) {
+      console.error('Error eliminant planta:', error);
+      throw error;
+    }
+    return data;
   }
 }
